@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Zachery Tillotson`
+    title: `Zachery Tillotson`,
     description: `Zachery Tillotson - A guy who loves the coding culture and wants to see the web grow`,
-    author: `Zack Tillotson`,
+    author: `Zachery Tillotson`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -21,12 +21,13 @@ module.exports = {
         name: `Zachery-Tillotson`,
         short_name: `Tillotson`,
         start_url: `/`,
-        background_color: `#f6f6f6`,
-        theme_color: `#c7372a`,
+        background_color: `#5f615f`,
+        theme_color: `#707e74`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`,
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-sass`,
   ],
 }

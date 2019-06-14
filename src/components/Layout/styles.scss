@@ -1,0 +1,38 @@
+@import './reset';
+@import './root';
+
+.page-header {
+  margin: 0 auto;
+
+  max-width: var(--max-width-content);
+  padding: var(--spacing-unit);
+
+  a:link, a:visited {
+    text-decoration: none;
+    padding-right: var(--spacing-unit);
+  }
+
+  &__header {
+    font-size: 3rem;
+    font-family: var(--font-family-header);
+  }
+
+  navigation {
+    font-weight: normal;
+  }
+}
+
+.page-main {
+  margin: 0 auto;
+
+  max-width: var(--max-width-content);
+  padding: var(--spacing-unit);
+
+}
+
+.page-footer {
+  margin: 0 auto;
+
+  max-width: var(--max-width-content);
+  padding: var(--spacing-unit);
+}

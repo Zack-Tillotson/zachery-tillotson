@@ -1,0 +1,29 @@
+:root {
+  --top-hat-height: calc(3 * var(--spacing-unit));
+}
+
+.top-hat {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--top-hat-height);
+
+  display: grid;
+  justify-content: center;
+
+  background: var(--color-brand-highlight);
+  color: var(--color-brand-content);
+
+  a:link, a:visited {
+    color: var(--color-brand-base);
+  }
+
+  &__content {
+    line-height: var(--top-hat-height);
+  }
+}
+
+.body--with-top-hat {
+  padding-top: var(--top-hat-height);
+}
