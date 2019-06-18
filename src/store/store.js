@@ -11,7 +11,6 @@ const rootReducer = combineReducers({
   maze,
 });
 
-
 const sagaMiddleware = createSagaMiddleware();
 
 const middleware = [

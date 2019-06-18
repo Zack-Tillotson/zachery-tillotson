@@ -38,6 +38,11 @@ function* retracePath() {
 }
 
 function* generateMaze() {
+  if((yield select(selector)).state !== 'Ready') {
+    yield initialize();
+    return;
+  }
+
   try {
     while(true) {
       yield delay(DELAY);

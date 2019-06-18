@@ -9,14 +9,17 @@ import useKitten from './useKitten';
 
 import "./styles.scss"
 
-const MazeContainer = ({state, size: {width, height}, grid, path, requestGeneration, requestInitialization}) => {
+const MazeContainer = ({state, size: {width, height}, grid, path, requestGeneration}) => {
   const [ref, imgUrl] = useKitten();
 
   return (
     <section>
-      <h2>Maze {state}</h2>
-      <button onClick={() => requestInitialization()}>Reset</button>
-      <button onClick={() => requestGeneration()}>Start</button>
+      <section className="maze__controls">
+        <h3 className="maze__control">State: {state}</h3>
+        {state !== 'Ready' && <button className="maze__control" onClick={() => requestGeneration()}>Reset</button>}
+        {state === 'Ready' && <button className="maze__control" onClick={() => requestGeneration()}>Start</button>}
+      </section>
+
       <div className="maze" ref={ref} style={{gridTemplateColumns: `repeat(${width}, 1fr)`, backgroundImage: `url(${imgUrl})`}}>
         {new Array(height * width).fill().map((_, i) => (
             <span key={i} className={cn('maze__cell', {

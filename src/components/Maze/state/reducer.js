@@ -9,7 +9,7 @@ const initialCell = {
 }
 
 const initialState = {
-  state: 'pending',
+  state: 'Ready',
 
   size: {
     width: 1,
@@ -28,10 +28,10 @@ export default function(state = initialState, action) {
         ...initialState,
         size: {width, height},
         grid: new Array(width*height).fill(initialCell),
-        path: [0],
+        path: [parseInt(Math.random() * width * height)],
       };
 
-      nextState.grid[0] = {...nextState.grid[0], visited: true};
+      nextState.grid[nextState.path[0]] = {...nextState.grid[nextState.path[0]], visited: true};
       return nextState;
     }
 
@@ -82,7 +82,7 @@ export default function(state = initialState, action) {
 
       const nextState = {
         ...state,
-        state: 'generating',
+        state: 'In Progress',
         grid: [...state.grid],
         path: [...state.path],
       }
@@ -103,7 +103,7 @@ export default function(state = initialState, action) {
     case types.generationFinished: {
       return {
         ...state,
-        state: 'generated',
+        state: 'Complete',
       }
     }
 

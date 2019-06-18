@@ -36,3 +36,14 @@
   max-width: var(--max-width-content);
   padding: var(--spacing-unit);
 }
+
+button {
+  padding: .5rem;
+  border: none;
+
+  font-size: 2rem;
+  background: var(--color-brand-highlight);
+  color: var(--color-brand-base);
+  border-radius: 5px;
+
+}
