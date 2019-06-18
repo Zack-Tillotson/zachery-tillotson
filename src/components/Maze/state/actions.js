@@ -8,8 +8,16 @@ function generationFinished() {
   return {type: types.generationFinished};
 }
 
-function requestGeneration(movement) {
-  return {type: types.requestGeneration, payload: {movement}};
+function requestInitialization() {
+  return {type: types.requestInitialization}
+}
+
+function requestGeneration() {
+  return {type: types.requestGeneration};
+}
+
+function movementTaken(movement) {
+  return {type: types.movementTaken, payload: {movement}};
 }
 
 function deadendHit() {
@@ -20,6 +28,8 @@ export default {
   initialize,
   generationFinished,
 
+  requestInitialization,
   requestGeneration,
+  movementTaken,
   deadendHit,
 }

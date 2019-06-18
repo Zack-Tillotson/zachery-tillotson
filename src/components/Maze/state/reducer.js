@@ -25,7 +25,7 @@ export default function(state = initialState, action) {
     case types.initialize: {
       const {width, height} = action.payload;
       const nextState = {
-        ...state,
+        ...initialState,
         size: {width, height},
         grid: new Array(width*height).fill(initialCell),
         path: [0],
@@ -35,13 +35,9 @@ export default function(state = initialState, action) {
       return nextState;
     }
 
-    case types.requestGeneration: {
+    case types.movementTaken: {
 
       const {movement} = action.payload;
-
-      if(typeof movement !== 'number') {
-        return state;
-      }
 
       const latestStepIndex = state.path[state.path.length - 1];
       let nextStepIndex;

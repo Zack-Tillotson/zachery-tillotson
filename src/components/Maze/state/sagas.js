@@ -1,8 +1,10 @@
-import {put, takeEvery, select, delay} from 'redux-saga/effects';
+import {put, takeLatest, select, delay} from 'redux-saga/effects';
 
 import types from './actionTypes';
 import actions from './actions';
 import selector from './selector';
+
+const DELAY = 1;
 
 function* initialize() {
   yield put(actions.initialize(25, 25));
@@ -27,27 +29,38 @@ function* calculateMoveOptions() {
 function* retracePath() {
   const {path} = yield select(selector);
   if(!path.length) {
-    return yield put(actions.generationFinished()); // We done!
+    yield put(actions.generationFinished()); // We done!
+    return true;
   }
 
   yield put(actions.deadendHit());
-  yield attemptMovement();
+  return false;
 }
 
-function* attemptMovement() {
-  const moveOptions = yield calculateMoveOptions();
+function* generateMaze() {
+  try {
+    while(true) {
+      yield delay(DELAY);
 
-  if(!moveOptions.length) {
-    return yield retracePath();
+      const moveOptions = yield calculateMoveOptions();
+
+      if(!moveOptions.length) {
+        const isFinished = yield retracePath();
+        if(isFinished) {
+          break;
+        }
+      } else {
+        const movement = moveOptions[parseInt(Math.random() * moveOptions.length)];
+        yield put(actions.movementTaken(movement));
+      }
+    }
+  } catch(e) {
+    // Is cancellable
   }
-
-  yield delay(10);
-  const movement = moveOptions[parseInt(Math.random() * moveOptions.length)];
-  yield put(actions.requestGeneration(movement));
 }
 
 function* startDepthFirstGeneration() {
-  yield takeEvery(types.requestGeneration, attemptMovement);
+  yield takeLatest(types.requestGeneration, generateMaze);
 }
 
 export default [
