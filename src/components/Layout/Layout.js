@@ -1,13 +1,8 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
+
+import withStore from '../../store';
 
 import Seo from '../Seo';
 
@@ -31,10 +26,10 @@ const Layout = ({ title, children }) => (
           <Link to="/" className="page-header__header">
             {data.site.siteMetadata.title}
           </Link>
-          <navigation>
+          <nav>
             <Link to="/resume/">Résumé</Link>
             <Link to="/talks/">Technical Talks</Link>
-          </navigation>
+          </nav>
         </header>
         <main className="page-main">{children}</main>
         <footer className="page-footer">
@@ -49,4 +44,4 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export default withStore(Layout);

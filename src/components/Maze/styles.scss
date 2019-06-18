@@ -1,0 +1,39 @@
+.maze {
+  height: 75vh;
+  margin: 0 auto;
+
+  display: grid;
+  grid-auto-rows: 1fr;
+  background: url('https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.telegraph.co.uk%2Fcontent%2Fdam%2FPets%2Fspark%2Froyal-canin%2Ftabby-kitten-small-xlarge.jpg&f=1') center center no-repeat no-repeat;
+  background-size: cover;
+}
+
+.maze__cell {
+  background: var(--color-brand-highlight);
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border: solid 1px rgba(0,0,0,0);
+}
+
+.maze__cell--left {
+  border-left-color: var(--color-brand-content);
+}
+
+.maze__cell--right {
+  border-right-color: var(--color-brand-content);
+}
+
+.maze__cell--top {
+  border-top-color: var(--color-brand-content);
+
+}
+
+.maze__cell--bottom {
+  border-bottom-color: var(--color-brand-content);
+}
+
+
+.maze__cell--visited {
+  background: none;
+}
