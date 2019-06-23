@@ -7,6 +7,8 @@ import maze from '../components/Maze/state/reducer';
 
 import mazeSagas from '../components/Maze/state/sagas';
 
+const window = typeof window ===  'undefined' ? {} : window;
+
 const rootReducer = combineReducers({
   maze,
 });
