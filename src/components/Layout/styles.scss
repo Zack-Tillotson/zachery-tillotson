@@ -1,5 +1,6 @@
 @import './reset';
 @import './root';
+@import './colors';
 
 .page-header {
   margin: 0 auto;
@@ -42,8 +43,8 @@ button {
   border: none;
 
   font-size: 2rem;
-  background: var(--color-brand-highlight);
-  color: var(--color-brand-base);
+  background: var(--color-bg-light);
+  color: var(--color-fg-primary);
   border-radius: 5px;
 
 }

@@ -1,9 +1,4 @@
 :root {
-  --color-brand-base: #3d3e3f;
-  --color-brand-base-offset: #5f615f;
-  --color-brand-highlight: #7cbc8e;
-  --color-brand-content: #e4e9e5;
-
   --font-family-content: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-family-header: "Lora", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
@@ -12,14 +7,14 @@
 }
 
 body {
-  background: var(--color-brand-base);
-  color: var(--color-brand-content);
+  background: var(--color-bg-light);
+  color: var(--color-txt-primary);
   font-size: 1.5em;
   font-family: var(--font-family-content);
 }
 
 a:link, a:visited {
-  color: var(--color-brand-highlight);
+  color: var(--color-fg-primary);
 }
 
 h1, h2, h3, h4 {

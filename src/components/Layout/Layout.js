@@ -29,6 +29,7 @@ const Layout = ({ title, children }) => (
           <nav>
             <Link to="/resume/">Résumé</Link>
             <Link to="/talks/">Technical Talks</Link>
+            <Link to="/apps/">Apps</Link>
           </nav>
         </header>
         <main className="page-main">{children}</main>
