@@ -1,1 +1,1 @@
-export default 'maze';
+export default 'populationStats';

@@ -1,35 +1,20 @@
 import types from './actionTypes';
 
-function initialize(width, height) {
-  return {type: types.initialize, payload: {width, height}};
+function initialize(definitions) {
+  return {type: types.initialize, payload: definitions};
 }
 
-function generationFinished() {
-  return {type: types.generationFinished};
+function definitionChanged(id, name, value) {
+  return {type: types.definitionChanged, payload: {id, name, value}}
 }
 
-function requestInitialization() {
-  return {type: types.requestInitialization}
+function generate() {
+  return {type: types.generate};
 }
 
-function requestGeneration() {
-  return {type: types.requestGeneration};
-}
-
-function movementTaken(movement) {
-  return {type: types.movementTaken, payload: {movement}};
-}
-
-function deadendHit() {
-  return {type: types.deadendHit};
-}
 
 export default {
   initialize,
-  generationFinished,
-
-  requestInitialization,
-  requestGeneration,
-  movementTaken,
-  deadendHit,
+  definitionChanged,
+  generate,
 }

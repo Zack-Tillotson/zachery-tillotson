@@ -7,19 +7,32 @@ import dispatcher from './state/actions';
 
 import "./styles.scss"
 
-const PopulationStatsContainer = ({state, size: {width, height}, grid, path, requestGeneration}) => {
+const PopulationStatsContainer = ({definitions, stats, definitionChanged, generate}) => {
+
+  const handleInputChange = (event) => {
+    const {target} = event;
+
+    const id = parseInt(target.name.split('-')[0]);
+    const name = target.dataset['name'];
+    const value = target.value;
+
+    definitionChanged(id, name, value);
+  }
 
   return (
     <section>
       <section className="ps__controls">
         <h2 className="ps__control">Population Definition</h2>
-        <div className="card">
-          <h4>Group 1</h4>
-          <label htmlFor="p1-avg">Average</label>
-          <input id="p1-avg" type="range" min={0} max={1} value={.5} />
-          <label htmlFor="p1-stddev">Std Dev</label>
-          <input id="p1-stddev" type="range" min={0} max={1} value={.5} />
-        </div>
+        {definitions.map(group => (
+          <div key={group.id} className="card">
+            <h4>{group.name}</h4>
+            <label htmlFor={`${group.id}-p-avg`}>Average ({group.mean})</label>
+            <input name={`${group.id}-p-avg`} type="range" min={0} max={1} value={group.mean} step={.01} data-name="mean" onChange={handleInputChange} />
+            <label htmlFor={`${group.id}-p-stddev`}>Std Dev ({group.stdDev})</label>
+            <input name={`${group.id}-p-stddev`} type="range" min={0} max={1} value={group.stdDev} step={.01} data-name="stdDev" onChange={handleInputChange} />
+          </div>
+        ))}
+        <button onClick={generate}>Generate Stats</button>
       </section>
       <section>
         <h2>Combined Population Stats</h2>
@@ -33,11 +46,14 @@ const PopulationStatsContainer = ({state, size: {width, height}, grid, path, req
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Top 1%</td>
-              <td></td>
-              <td></td>
-            </tr>
+            {stats.map(stat => (
+              <tr key={stat.name}>
+                <td>{stat.name}</td>
+                {stat.groups.map((group, index) => (
+                  <td key={index}>{group} ({parseInt(group * 100 / stat.groups.reduce((soFar, item) => soFar + item, 0)) / 100}%)</td>
+                ))}
+              </tr>
+            ))}
           </tbody>
         </table>
       </section>
