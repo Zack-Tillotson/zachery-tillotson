@@ -20,7 +20,7 @@ const PopulationStatsContainer = ({definitions, stats, definitionChanged, genera
   }
 
   return (
-    <section>
+    <section className="population-stats">
       <section className="ps__controls">
         <h2 className="ps__control">Population Definition</h2>
         {definitions.map(group => (
@@ -34,29 +34,31 @@ const PopulationStatsContainer = ({definitions, stats, definitionChanged, genera
         ))}
         <button onClick={generate}>Generate Stats</button>
       </section>
-      <section>
-        <h2>Combined Population Stats</h2>
-        <p>Are you surprised?</p>
-        <table>
-          <thead>
-            <tr>
-              <th />
-              <th>Group 1</th>
-              <th>Group 2</th>
-            </tr>
-          </thead>
-          <tbody>
-            {stats.map(stat => (
-              <tr key={stat.name}>
-                <td>{stat.name}</td>
-                {stat.groups.map((group, index) => (
-                  <td key={index}>{group} ({parseInt(group * 100 / stat.groups.reduce((soFar, item) => soFar + item, 0)) / 100}%)</td>
-                ))}
+      {!!stats.length && (
+        <section>
+          <h2>Combined Population Stats</h2>
+          <p>Are you surprised?</p>
+          <table>
+            <thead>
+              <tr>
+                <th />
+                <th>Group 1</th>
+                <th>Group 2</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      </section>
+            </thead>
+            <tbody>
+              {stats.map(stat => (
+                <tr key={stat.name}>
+                  <td>{stat.name}</td>
+                  {stat.groups.map((group, index) => (
+                    <td key={index}>{group} ({parseInt(group * 10000 / stat.groups.reduce((soFar, item) => soFar + item, 0)) / 100}%)</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </section>
+      )}
     </section>
   );
 }

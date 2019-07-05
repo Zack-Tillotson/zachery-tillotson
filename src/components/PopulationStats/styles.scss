@@ -1,0 +1,29 @@
+.population-stats {
+	input {
+		display: block;
+	}
+
+	.card {
+		margin-top: 2rem;
+	}
+
+	h2 {
+		font-weight: bold;
+	}
+
+	h4 {
+		font-weight: bold;
+	}
+
+	button {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		border: solid 2px var(--color-fg-primary);
+		color: var(--color-text-primary);
+	}
+
+	table {
+		width: 100%;
+		text-align: right;
+	}
+}
