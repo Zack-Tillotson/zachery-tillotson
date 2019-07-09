@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react"
 import { Link } from "gatsby"
+import Helmet from 'react-helmet'
 
 import './styles.scss';
 
 import Layout from "../../components/Layout"
-import Maze from '../../components/Maze';
 
 const MazeContainer = () => {
 	const [installPrompt, saveInstallEvent] = useState(null);
@@ -29,6 +29,8 @@ const MazeContainer = () => {
 
 	return (
 		<Layout title="Maze">
+      <Helmet><link rel="manifest" href="./manifest.json" /></Helmet>
+
 			<h1>Maze Generator</h1>
 
 			<p>A little toy I created to investigate GatsbyJS, CSS Grid, and React Hooks in depth. It's a maze generator which uses a stochastic Depth First Search algorithm. And it has kittens!</p>
@@ -38,7 +40,8 @@ const MazeContainer = () => {
 			)}
 
 			<div className="install-status">
-				{installState === 'before' && "Ready to install"}
+				{installState === 'before' && !installPrompt && "Preparing installation"}
+        {installState === 'before' && !!installPrompt && "Ready to install"}
 				{installState === 'installing' && "Installing Maze"}
 				{installState === 'installed' && "Maze installation complete"}
 			</div>

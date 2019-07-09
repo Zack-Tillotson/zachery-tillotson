@@ -10,8 +10,8 @@ const Apps = () => (
     <ul>
     	<li><Link to="/apps/maze/">Maze Generator</Link></li>
     	<li><Link to="/apps/population-stats/">Population Stats</Link></li>
-    	<li><Link to="/">Go back to the homepage</Link></li>
     </ul>
+    <Link to="/" className="shift-down">Go back to the homepage</Link>
   </Layout>
 )
 

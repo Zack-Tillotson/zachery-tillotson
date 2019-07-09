@@ -15,18 +15,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Zachery-Tillotson`,
-        short_name: `Tillotson`,
-        start_url: `/`,
-        background_color: `#5f615f`,
-        theme_color: `#707e74`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
-      },
-    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sass`,
   ],

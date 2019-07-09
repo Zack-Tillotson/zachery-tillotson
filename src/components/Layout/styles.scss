@@ -9,8 +9,8 @@
   padding: var(--spacing-unit);
 
   a:link, a:visited {
-    text-decoration: none;
     padding-right: var(--spacing-unit);
+    text-decoration: none;
   }
 
   &__header {
@@ -21,6 +21,20 @@
   nav {
     font-weight: normal;
   }
+
+  &--minimal {
+    display: flex;
+    flex-flow: row wrap;
+
+    .page-header__header {
+      font-size: 1.5rem;
+    }
+
+    nav {
+      flex: 1;
+      text-align: right;
+    }
+  }
 }
 
 .page-main {
@@ -28,7 +42,6 @@
 
   max-width: var(--max-width-content);
   padding: var(--spacing-unit);
-
 }
 
 .page-footer {

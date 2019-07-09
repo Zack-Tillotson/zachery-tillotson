@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql, Link } from "gatsby"
+import cn from 'classnames';
 
 import withStore from '../../store';
 
@@ -8,7 +9,7 @@ import Seo from '../Seo';
 
 import "./styles.scss"
 
-const Layout = ({ title, children }) => (
+const Layout = ({ isMinimal = true, title, children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -22,8 +23,8 @@ const Layout = ({ title, children }) => (
     render={data => (
       <>
         <Seo title={title} />
-        <header className="page-header">
-          <Link to="/" className="page-header__header">
+        <header className={cn('page-header', {'page-header--minimal': isMinimal})}>
+          <Link to="/" className={cn('page-header__header')}>
             {data.site.siteMetadata.title}
           </Link>
           <nav>
