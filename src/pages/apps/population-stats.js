@@ -8,7 +8,7 @@ import PopulationStats from '../../components/PopulationStats';
 const PopulationStatsContainer = () => (
   <Layout title="Population Stats">
     <Helmet>
-      <meta name="theme-color" value="#caebf2" />
+      <meta name="theme-color" content="#caebf2" />
       <link rel="manifest" href="./manifest.json" />
     </Helmet>
     <h1>Population Stats</h1>

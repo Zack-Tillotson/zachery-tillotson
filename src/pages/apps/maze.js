@@ -30,7 +30,7 @@ const MazeContainer = () => {
 	return (
 		<Layout title="Maze">
       <Helmet>
-        <meta name="theme-color" value="#ff3b3f" />
+        <meta name="theme-color" content="#ff3b3f" />
         <link rel="manifest" href="./manifest.json" />
       </Helmet>
 
