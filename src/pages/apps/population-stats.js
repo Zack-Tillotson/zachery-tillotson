@@ -7,7 +7,10 @@ import PopulationStats from '../../components/PopulationStats';
 
 const PopulationStatsContainer = () => (
   <Layout title="Population Stats">
-    <Helmet><link rel="manifest" href="./manifest.json" /></Helmet>
+    <Helmet>
+      <meta name="theme-color" value="#caebf2" />
+      <link rel="manifest" href="./manifest.json" />
+    </Helmet>
     <h1>Population Stats</h1>
 
     <p>This app is a demonstration of unintuitive statistical differences in populations.</p>

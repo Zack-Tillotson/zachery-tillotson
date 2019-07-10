@@ -29,7 +29,10 @@ const MazeContainer = () => {
 
 	return (
 		<Layout title="Maze">
-      <Helmet><link rel="manifest" href="./manifest.json" /></Helmet>
+      <Helmet>
+        <meta name="theme-color" value="#ff3b3f" />
+        <link rel="manifest" href="./manifest.json" />
+      </Helmet>
 
 			<h1>Maze Generator</h1>
 
