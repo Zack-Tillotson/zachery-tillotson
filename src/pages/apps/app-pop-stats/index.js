@@ -1,16 +1,15 @@
-import React, {Fragment} from "react"
-import { Link } from "gatsby"
+import React from "react"
+
+import AppLayout from '../../../components/AppLayout';
 
 import PopStats from '../../../components/PopulationStats';
 import withStore from '../../../store';
 
 
 const PopStatsContainer = () => (
-  <Fragment>
-    <h1>Population Statistics</h1>
+  <AppLayout title="Population Statistics">
     <PopStats />
-    <p>By Zack Tillotson</p>
-  </Fragment>
+  </AppLayout>
 )
 
 export default withStore(PopStatsContainer);

@@ -1,0 +1,22 @@
+.app-header {
+  padding: 1rem;
+  border-bottom: solid 2px var(--color-bg-dark);
+  font-size: 2rem;
+  font-weight: bold;
+  background: var(--color-bg-light-offset);
+  color: var(--color-txt-secondary);
+  text-align: center;
+}
+
+.app-content {
+  margin: 1rem;
+}
+
+.app-footer {
+  display: inline-block;
+  max-width: var(--max-width-content);
+  margin: var(--spacing-unit);
+
+  font-size: .75rem;
+  color: var(--color-txt-primary);
+}

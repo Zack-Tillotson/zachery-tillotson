@@ -3,7 +3,6 @@ import { Link } from "gatsby"
 import Helmet from 'react-helmet'
 
 import Layout from "../../components/Layout"
-import PopulationStats from '../../components/PopulationStats';
 
 const PopulationStatsContainer = () => (
   <Layout title="Population Stats">

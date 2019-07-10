@@ -1,4 +1,4 @@
-import {put, takeLatest, select, delay} from 'redux-saga/effects';
+import {put} from 'redux-saga/effects';
 
 // import types from './actionTypes';
 import actions from './actions';

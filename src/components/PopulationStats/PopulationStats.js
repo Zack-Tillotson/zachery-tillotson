@@ -1,5 +1,4 @@
 import React from 'react';
-import cn from 'classnames';
 import {connect} from 'react-redux';
 
 import selector from './state/selector';

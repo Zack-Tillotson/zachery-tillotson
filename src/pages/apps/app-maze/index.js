@@ -1,16 +1,14 @@
-import React, {Fragment} from "react"
-import { Link } from "gatsby"
+import React from "react"
 
+import AppLayout from '../../../components/AppLayout';
 import Maze from '../../../components/Maze';
 import withStore from '../../../store';
 
 
 const MazeContainer = () => (
-  <Fragment>
-    <h1>Maze Generator</h1>
+  <AppLayout title="Maze Generator">
     <Maze />
-    <p>By Zack Tillotson</p>
-  </Fragment>
+  </AppLayout>
 )
 
 export default withStore(MazeContainer);
