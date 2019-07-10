@@ -6,7 +6,13 @@ import Layout from "../components/Layout"
 const Resume = () => (
   <Layout title="Résumé">
     <h1>Résumé</h1>
-    <Link to="/">Go back to the homepage</Link>
+    <ul>
+      <li><a href="https://github.com/Zack-Tillotson">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/zacherytillotson/">LinkedIn</a></li>
+      <li><a href="/Resume042018.pdf">PDF Résumé</a></li>
+      <li><a href="/Resume042018.docx">Word Résumé</a></li>
+    </ul>
+    <Link className="shift-down" to="/">Go back to the homepage</Link>
   </Layout>
 );
 
