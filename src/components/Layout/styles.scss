@@ -51,12 +51,18 @@
   padding: var(--spacing-unit);
 }
 
-button {
+.button--primary, button {
+  display: inline-block;
+
   padding: .5rem;
   border: none;
 
   font-size: 2rem;
-  background: var(--color-bg-light);
-  color: var(--color-fg-primary);
+  background: var(--color-fg-primary);
   border-radius: 5px;
+  text-decoration: none;
+
+  &:link, &:visited {
+    color: var(--color-txt-dark-primary);
+  };
 }

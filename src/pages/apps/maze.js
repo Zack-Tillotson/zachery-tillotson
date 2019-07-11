@@ -49,6 +49,10 @@ const MazeContainer = () => {
 				{installState === 'installed' && "Maze installation complete"}
 			</div>
 
+      <div>
+        <a className="button--primary" href="/apps/app-maze/">Launch App</a>
+      </div>
+
 			<Link to="/apps/">
 			  Go back to the list of apps
 			</Link>
