@@ -7,7 +7,8 @@ import withStore from '../../store';
 
 import Seo from '../Seo';
 
-import "./styles.scss"
+import './styles.scss';
+import './appLanding.scss';
 
 const Layout = ({ isMinimal = true, title, children }) => (
   <StaticQuery

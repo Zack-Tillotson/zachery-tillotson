@@ -5,7 +5,7 @@ import Helmet from 'react-helmet'
 import Layout from "../../components/Layout"
 
 const PopulationStatsContainer = () => (
-  <Layout title="Population Stats">
+  <Layout title="Population Stats" className="app-landing">
     <Helmet>
       <meta name="theme-color" content="#caebf2" />
       <link rel="manifest" href="./manifest.json" />

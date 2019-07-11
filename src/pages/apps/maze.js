@@ -1,34 +1,17 @@
-import React, {useEffect, useState} from "react"
+import React from "react"
 import { Link } from "gatsby"
 import Helmet from 'react-helmet'
 
 import './styles.scss';
 
 import Layout from "../../components/Layout"
+import usePwaInstall from '../../utils/usePwaInstall';
 
 const MazeContainer = () => {
-	const [installPrompt, saveInstallEvent] = useState(null);
-	const [installState, saveInstall] = useState('before');
-
-	useEffect(() => {
-		window.addEventListener('beforeinstallprompt ', e => {
-		  e.preventDefault();
-		  saveInstallEvent(e);
-		});
-		window.addEventListener('appinstalled', e => {
-		  saveInstall('installed');
-		});
-	});
-
-	const triggerInstall = e => {
-		if(!!installPrompt) {
-			installPrompt.prompt();
-			installPrompt.userChoice.then(result => saveInstall(result.outcome === 'accepted' ? 'installing' : 'rejected'));
-		}
-	}
+  const [installationPrompt, installStatus] = usePwaInstall();
 
 	return (
-		<Layout title="Maze">
+		<Layout title="Maze" className="app-landing">
       <Helmet>
         <meta name="theme-color" content="#ff3b3f" />
         <link rel="manifest" href="./manifest.json" />
@@ -38,16 +21,9 @@ const MazeContainer = () => {
 
 			<p>A little toy I created to investigate GatsbyJS, CSS Grid, and React Hooks in depth. It's a maze generator which uses a stochastic Depth First Search algorithm. And it has kittens!</p>
 
-			{!!installPrompt && (
-				<button onClick={triggerInstall}>Install Maze</button>
-			)}
+			{installationPrompt}
 
-			<div className="install-status">
-				{installState === 'before' && !installPrompt && "Preparing installation"}
-        {installState === 'before' && !!installPrompt && "Ready to install"}
-				{installState === 'installing' && "Installing Maze"}
-				{installState === 'installed' && "Maze installation complete"}
-			</div>
+			{installStatus}
 
       <div>
         <a className="button--primary" href="/apps/app-maze/">Launch App</a>
