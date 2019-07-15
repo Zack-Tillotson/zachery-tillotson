@@ -7,4 +7,5 @@ export default {
   movementTaken: `${namespace}/movementTaken`,
   deadendHit: `${namespace}/deadendHit`,
   generationFinished: `${namespace}/generationFinished`,
+  optionChanged: `${namespace}/optionChanged`,
 }

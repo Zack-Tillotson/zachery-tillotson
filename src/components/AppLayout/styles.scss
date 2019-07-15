@@ -20,3 +20,23 @@
   font-size: .75rem;
   color: var(--color-txt-primary);
 }
+
+.app-layout__content {
+  max-width: 50rem;
+  margin: 0 auto;
+
+  h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 4rem 0;
+  }
+
+  h4 {
+    font-weight: bold;
+    margin-top: 4rem;
+  }
+
+  a:link, a:visited {
+    text-decoration: none;
+  }
+}

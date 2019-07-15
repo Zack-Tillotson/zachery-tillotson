@@ -10,6 +10,11 @@ const initialCell = {
 
 const initialState = {
   state: 'Ready',
+  options: {
+    showPath: false,
+    backgroundImage: false,
+    fastMode: false,
+  },
 
   size: {
     width: 1,
@@ -26,9 +31,10 @@ export default function(state = initialState, action) {
       const {width, height} = action.payload;
       const nextState = {
         ...initialState,
+        options: state.options,
         size: {width, height},
         grid: new Array(width*height).fill(initialCell),
-        path: [parseInt(Math.random() * width * height)],
+        path: [0],
       };
 
       nextState.grid[nextState.path[0]] = {...nextState.grid[nextState.path[0]], visited: true};
@@ -104,6 +110,18 @@ export default function(state = initialState, action) {
       return {
         ...state,
         state: 'Complete',
+      }
+    }
+
+    case types.optionChanged: {
+      const {name, value} = action.payload;
+
+      return {
+        ...state,
+        options: {
+          ...state.options,
+          [name]: value,
+        }
       }
     }
 

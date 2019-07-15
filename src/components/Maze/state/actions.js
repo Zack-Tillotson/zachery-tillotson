@@ -24,6 +24,10 @@ function deadendHit() {
   return {type: types.deadendHit};
 }
 
+function optionChanged(name, value) {
+  return {type: types.optionChanged, payload: {name, value}};
+}
+
 export default {
   initialize,
   generationFinished,
@@ -32,4 +36,6 @@ export default {
   requestGeneration,
   movementTaken,
   deadendHit,
+
+  optionChanged,
 }

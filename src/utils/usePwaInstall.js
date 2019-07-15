@@ -32,7 +32,9 @@ function usePwaInstall() {
     }
   }
 
-  const installationPrompt = (<button onClick={triggerInstall}>Install</button>);
+  let installationPrompt = null;
+
+  if(installEvent) installationPrompt = (<button onClick={triggerInstall}>Install</button>);
 
   const installationStatus = (
     <div className="install-status">

@@ -4,7 +4,8 @@ import types from './actionTypes';
 import actions from './actions';
 import selector from './selector';
 
-const DELAY = 1;
+const SLOW_DELAY = 200;
+const FAST_DELAY = 25;
 
 function* initialize() {
   yield put(actions.initialize(25, 25));
@@ -45,7 +46,9 @@ function* generateMaze() {
 
   try {
     while(true) {
-      yield delay(DELAY);
+      const {fastMode} = (yield select(selector)).options;
+
+      yield delay(fastMode ? FAST_DELAY : SLOW_DELAY);
 
       const moveOptions = yield calculateMoveOptions();
 

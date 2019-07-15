@@ -5,12 +5,21 @@ import {connect} from 'react-redux';
 import selector from './state/selector';
 import dispatcher from './state/actions';
 
-import useKitten from './useKitten';
+import useKitten from '../../utils/usePlaceKitten';
 
 import "./styles.scss"
 
-const MazeContainer = ({state, size: {width, height}, grid, path, requestGeneration}) => {
+const MazeContainer = ({state, size: {width, height}, grid, path, options, requestGeneration}) => {
   const [ref, imgUrl] = useKitten();
+
+  const mazeStyles = {
+    gridTemplateColumns: `repeat(${width}, 1fr)`,
+    backgroundImage: `url(${imgUrl})`,
+  };
+
+  if(!options.backgroundImage) {
+    delete mazeStyles.backgroundImage;
+  }
 
   return (
     <section>
@@ -20,7 +29,7 @@ const MazeContainer = ({state, size: {width, height}, grid, path, requestGenerat
         {state === 'Ready' && <button className="maze__control" onClick={() => requestGeneration()}>Start</button>}
       </section>
 
-      <div className="maze" ref={ref} style={{gridTemplateColumns: `repeat(${width}, 1fr)`, backgroundImage: `url(${imgUrl})`}}>
+      <div className="maze" ref={ref} style={mazeStyles}>
         {new Array(height * width).fill().map((_, i) => (
             <span key={i} className={cn('maze__cell', {
               'maze__cell--top':  grid[i].top,
@@ -28,7 +37,8 @@ const MazeContainer = ({state, size: {width, height}, grid, path, requestGenerat
               'maze__cell--bottom': grid[i].bottom,
               'maze__cell--left': grid[i].left,
               'maze__cell--visited': grid[i].visited,
-              'maze__cell--path': path.indexOf(i) >= 0,
+              'maze__cell--path': options.showPath && path.indexOf(i) >= 0,
+              'maze__cell--active-path': path[path.length - 1] === i,
             })} />
           ))
         }

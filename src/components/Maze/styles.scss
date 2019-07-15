@@ -1,5 +1,8 @@
 .maze {
-  height: 75vh;
+  height: 90vw;
+  width: 90vw;
+  max-height: 80vh;
+  max-width: 80vh;
   margin: 0 auto;
   clear: both;
 
@@ -36,6 +39,10 @@
 
 .maze__cell--visited {
   background: none;
+}
+
+.maze__cell--active-path {
+  background: var(--color-fg-primary);
 }
 
 .maze__cell--path {
