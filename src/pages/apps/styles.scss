@@ -2,3 +2,16 @@
 	margin: 2rem 0 2rem 0;
 	font-size: .75rem;
 }
+
+.page-link {
+  display: block;
+}
+
+.maze__layout {
+  display: grid;
+  grid-template-columns: auto;
+
+  @media (min-width: 1440px) {
+    grid-template-columns: 1fr auto;
+  }
+}

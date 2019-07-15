@@ -1,10 +1,10 @@
 import React from "react"
 import {Link} from 'gatsby'
 
-import AppLayout from '../../../components/AppLayout';
+import Layout from '../../../components/AppLayout';
 
 const MazeContainer = () => (
-  <AppLayout title="Maze Maker">
+  <Layout title="Maze Maker">
     <section className="app-layout__content">
       <h2>F.A.Q.</h2>
       <section>
@@ -32,7 +32,7 @@ const MazeContainer = () => (
       </section>
       <Link className="shift-down" to="/apps/app-maze/">Back</Link>
     </section>
-  </AppLayout>
+  </Layout>
 );
 
 export default MazeContainer;

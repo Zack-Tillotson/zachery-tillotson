@@ -3,7 +3,7 @@ import cn from 'classnames';
 import {connect} from 'react-redux';
 
 import selector from './state/selector';
-import dispatcher from './state/actions';
+import actions from './state/actions';
 
 import useKitten from '../../utils/usePlaceKitten';
 
@@ -23,12 +23,6 @@ const MazeContainer = ({state, size: {width, height}, grid, path, options, reque
 
   return (
     <section>
-      <section className="maze__controls">
-        <h3 className="maze__control">State: {state}</h3>
-        {state !== 'Ready' && <button className="maze__control" onClick={() => requestGeneration()}>Reset</button>}
-        {state === 'Ready' && <button className="maze__control" onClick={() => requestGeneration()}>Start</button>}
-      </section>
-
       <div className="maze" ref={ref} style={mazeStyles}>
         {new Array(height * width).fill().map((_, i) => (
             <span key={i} className={cn('maze__cell', {
@@ -47,4 +41,4 @@ const MazeContainer = ({state, size: {width, height}, grid, path, options, reque
   );
 }
 
-export default connect(selector, dispatcher)(MazeContainer);
+export default connect(selector, actions)(MazeContainer);

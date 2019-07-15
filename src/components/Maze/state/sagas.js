@@ -9,6 +9,8 @@ const FAST_DELAY = 25;
 
 function* initialize() {
   yield put(actions.initialize(25, 25));
+  yield delay(1000);
+  yield put(actions.requestGeneration());
 }
 
 function* calculateMoveOptions() {

@@ -10,7 +10,7 @@ import Seo from '../Seo';
 import './styles.scss';
 import './appLanding.scss';
 
-const Layout = ({ isMinimal = true, title, children }) => (
+const Layout = ({ isMinimal = true, title, children, rootUrl = '/', className = ''}) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -25,7 +25,7 @@ const Layout = ({ isMinimal = true, title, children }) => (
       <>
         <Seo title={title} />
         <header className={cn('page-header', {'page-header--minimal': isMinimal})}>
-          <Link to="/" className={cn('page-header__header')}>
+          <Link to={rootUrl} className={cn('page-header__header')}>
             {data.site.siteMetadata.title}
           </Link>
           <nav>
@@ -34,7 +34,7 @@ const Layout = ({ isMinimal = true, title, children }) => (
             <Link to="/apps/">Apps</Link>
           </nav>
         </header>
-        <main className="page-main">{children}</main>
+        <main className={`page-main ${className}`}>{children}</main>
         <footer className="page-footer">
           © {new Date().getFullYear()} - Feel free to check out the code on my GitHub account.
         </footer>
