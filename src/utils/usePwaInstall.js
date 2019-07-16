@@ -10,6 +10,7 @@ function usePwaInstall() {
 
   useEffect(() => {
     const saveEventHandler = e => {
+      e.preventDefault();
       saveInstallEvent(e);
     }
     const installationFinishedHandler = e => {
@@ -28,7 +29,10 @@ function usePwaInstall() {
   const triggerInstall = e => {
     if(!!installEvent) {
       installEvent.prompt();
-      installEvent.userChoice.then(result => updateInstallationState(result.outcome === 'accepted' ? 'installing' : 'rejected'));
+      installEvent.userChoice.then(result => {
+        updateInstallationState(result.outcome === 'accepted' ? 'installing' : 'rejected');
+        saveInstallEvent(null);
+      });
     }
   }
 
