@@ -20,3 +20,48 @@
     padding: 1rem;
   }
 }
+
+.app-briefing {
+  display: grid;
+  grid-template-areas:
+    "hero"
+    "desc"
+    "dl";
+  background: var(--color-bg-dark);
+  color: var(--color-txt-dark-primary);
+  padding: var(--spacing-unit);
+
+  .app-briefing__hero {
+    grid-area: hero;
+  }
+
+  .app-briefing__desc {
+    grid-area: desc;
+    font-size: 1rem;
+    padding: var(--spacing-unit);
+  }
+
+  .app-briefing__dl {
+    grid-area: dl;
+    font-size: 1rem;
+    padding: var(--spacing-unit);
+    max-width: 500px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    dt {
+      color: var(--color-txt-dark-secondary);
+    }
+
+    dd {
+      color: var(--color-txt-dark-highlight);
+    }
+  }
+
+  @media (min-width: 800px) {
+    grid-template-areas:
+      "hero desc"
+      "hero dl";
+  }
+}

@@ -4,8 +4,8 @@ import { Link } from "gatsby"
 import Layout from "../components/Layout"
 
 const Resume = () => (
-  <Layout title="Résumé">
-    <h1>Résumé</h1>
+  <Layout title="About Me">
+    <h1>About Me</h1>
     <ul>
       <li><a href="https://github.com/Zack-Tillotson">GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/zacherytillotson/">LinkedIn</a></li>

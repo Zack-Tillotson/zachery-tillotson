@@ -40,14 +40,11 @@ function usePwaInstall() {
 
   if(installEvent) installationPrompt = (<button onClick={triggerInstall}>Install</button>);
 
-  const installationStatus = (
-    <div className="install-status">
-      {installationState === 'before' && !installEvent && "Not installable"}
-      {installationState === 'before' && !!installEvent && "Ready to install"}
-      {installationState === 'installing' && "Installing Maze"}
-      {installationState === 'installed' && "Maze installation complete"}
-    </div>
-  );
+  let installationStatus = '';
+  if(installationState === 'before' && !installEvent) installationStatus = "Not currently installable";
+  if(installationState === 'before' && !!installEvent) installationStatus = "Ready to install";
+  if(installationState === 'installing') installationStatus = "Installing Maze";
+  if(installationState === 'installed') installationStatus = "Installation complete";
 
   return [installationPrompt, installationStatus];
 }
