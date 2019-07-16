@@ -38,7 +38,7 @@
 }
 
 .maze__cell--visited {
-  background: none;
+  background: var(--color-bg-light-offset);
 }
 
 .maze__cell--active-path {
@@ -50,15 +50,9 @@
 }
 
 .maze__controls {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
   margin-bottom: 1rem;
 }
 
 .maze__control {
-  padding: .25rem;
-  margin-left: 1rem;
-  font-size: 1.5rem;
-  font-family: sans-serif;
+  color: var(--color-txt-dark-primary);
 }

@@ -7,7 +7,7 @@ import Options from '../../../components/Maze/Options';
 
 
 const MazeOptions = () => (
-  <Layout title="Maze Maker">
+  <Layout title="Maze Maker" rootUrl="/apps/app-maze/">
     <section className="app-layout__content">
       <h2>Options</h2>
       <Options />

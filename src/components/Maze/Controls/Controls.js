@@ -8,7 +8,7 @@ function Controls({state, requestGeneration}) {
   return (
     <section className="maze__controls">
       <button className="maze__control" onClick={() => requestGeneration()}>
-        {state === 'Ready' ? 'Start' : 'Reset'}
+        Reset
       </button>
     </section>
   );

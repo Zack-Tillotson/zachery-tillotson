@@ -10,9 +10,9 @@ const MazeContainer = () => {
   return (
     <Layout title="Maze Maker" rootUrl="/apps/app-maze/" className="maze__layout">
       <Maze />
-      <section>
-        <h2>Watch a maze be created!</h2>
+      <section className="maze__desc">
         <Controls />
+        <h2>Watch a maze be created!</h2>
 
         <Link className="page-link" to="/apps/app-maze/about">FAQ</Link>
         <Link className="page-link" to="/apps/app-maze/options">Options</Link>
