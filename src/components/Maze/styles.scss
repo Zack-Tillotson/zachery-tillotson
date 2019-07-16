@@ -10,6 +10,7 @@
   grid-auto-rows: 1fr;
   background: center center no-repeat no-repeat;
   background-size: cover;
+  background-color: var(--color-bg-light-offset);
 }
 
 .maze__cell {
@@ -38,7 +39,7 @@
 }
 
 .maze__cell--visited {
-  background: var(--color-bg-light-offset);
+  background: none;
 }
 
 .maze__cell--active-path {
