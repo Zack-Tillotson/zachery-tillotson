@@ -15,7 +15,7 @@ const MazeContainer = () => {
 		<Layout title="Maze" className="app-landing">
       <Helmet>
         <meta name="theme-color" content="#ff3b3f" />
-        <link rel="manifest" href="./manifest.json" />
+        <link rel="manifest" href="/apps/maze/manifest.json" />
       </Helmet>
 
 			<h1>Maze Maker</h1>
