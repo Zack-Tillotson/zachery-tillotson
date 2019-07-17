@@ -1,10 +1,15 @@
 import React from "react"
 import {Link} from 'gatsby'
+import Helmet from 'react-helmet'
 
 import Layout from '../../../components/AppLayout';
 
 const MazeContainer = () => (
   <Layout title="Maze Maker" rootUrl="/apps/app-maze/">
+    <Helmet>
+      <meta name="theme-color" content="#ff3b3f" />
+      <link rel="manifest" href="./manifest.json" />
+    </Helmet>
     <section className="app-layout__content">
       <h2>F.A.Q.</h2>
       <section>

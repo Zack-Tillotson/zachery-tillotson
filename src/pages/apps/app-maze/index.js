@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Helmet from 'react-helmet'
 
 import Layout from '../../../components/AppLayout';
 import Maze from '../../../components/Maze';
@@ -9,6 +10,11 @@ import withStore from '../../../store';
 const MazeContainer = () => {
   return (
     <Layout title="Maze Maker" rootUrl="/apps/app-maze/" className="maze__layout">
+      <Helmet>
+        <meta name="theme-color" content="#ff3b3f" />
+        <link rel="manifest" href="./manifest.json" />
+      </Helmet>
+
       <Maze />
       <section className="maze__desc">
         <Controls />
