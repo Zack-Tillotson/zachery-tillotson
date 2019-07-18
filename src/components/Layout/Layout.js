@@ -29,7 +29,7 @@ const Layout = ({ isMinimal = true, title, children, rootUrl = '/', className = 
             {data.site.siteMetadata.title}
           </Link>
           <nav>
-            <Link to="/resume/">Résumé</Link>
+            <Link to="/about-me/">Résumé</Link>
             <Link to="/talks/">Technical Talks</Link>
             <Link to="/apps/">Apps</Link>
           </nav>

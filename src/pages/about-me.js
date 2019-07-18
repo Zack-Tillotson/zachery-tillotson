@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
 
-const Resume = () => (
+const AboutMe = () => (
   <Layout title="About Me">
     <h1>About Me</h1>
     <ul>
@@ -16,4 +16,4 @@ const Resume = () => (
   </Layout>
 );
 
-export default Resume;
+export default AboutMe;

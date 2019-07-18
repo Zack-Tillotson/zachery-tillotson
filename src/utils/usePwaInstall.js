@@ -22,7 +22,7 @@ function usePwaInstall() {
 
     return () => {
       window.removeEventListener('beforeinstallprompt ', saveEventHandler);
-      window.addEventListener('appinstalled', installationFinishedHandler);
+      window.removeEventListener('appinstalled', installationFinishedHandler);
     }
   }, []);
 

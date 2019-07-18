@@ -44,9 +44,9 @@ const MazeContainer = () => {
       </section>
 
       <p>This is a visual demonstration of how a maze creation algorithm works.</p>
-      <p>The algorithm is a Stochastic Depth-First search algorithm. The maze is a simple graph where each node can connect to up to four neighbors. The algorithm starts at a random point and removes a random wall to connect the two rooms, it then does it again from the new room to an unconnected room. This is repeated until no unconnected rooms are touching the active room, the algorithm then backtracks to the first room with an unconnected neighbord. When all rooms are connected the algorithm & maze are finished.</p>``
+      <p>The algorithm is a Stochastic Depth-First search algorithm. The maze is a simple graph where each node can connect to up to four neighbors. The algorithm starts at a random point and removes a random wall to connect the two rooms, it then does it again from the new room to an unconnected room. This is repeated until no unconnected rooms are touching the active room, the algorithm then backtracks to the first room with an unconnected neighbord. When all rooms are connected the algorithm & maze are finished.</p>
 
-      <Link to="/apps/">
+      <Link to="/apps/" className="shift-down">
         Go back to the list of apps
       </Link>
     </Layout>
