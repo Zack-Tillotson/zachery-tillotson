@@ -66,3 +66,57 @@
     color: var(--color-txt-dark-primary);
   };
 }
+
+.app-card {
+  padding: var(--spacing-unit);
+  margin-bottom: var(--spacing-unit);
+
+  display: grid;
+  grid-template-areas:
+    "logo title"
+    "logo slogan"
+    "desc desc"
+    "cta cta";
+  grid-template-columns: auto 1fr;
+  grid-column-gap: var(--spacing-unit);
+  grid-row-gap: var(--spacing-unit);
+
+  background: var(--color-bg-light-offset);
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px #ccc;
+
+  .app-card__logo {
+    grid-area: logo;
+    max-width: 4rem;
+    align-self: center;
+  }
+
+  .app-card__title {
+    grid-area: title;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .app-card__slogan {
+    grid-area: slogan;
+    color: var(--color-txt-primary);
+    margin: 0;
+  }
+
+  .app-card__desc {
+    grid-area: desc;
+    color: var(--color-txt-primary);
+  }
+
+  .app-card__cta {
+    grid-area: cta;
+  }
+
+  @media(min-width: 1440px) {
+    grid-template-areas:
+      "logo title desc cta"
+      "logo slogan desc cta";
+    grid-template-columns: auto 1fr 2fr auto;
+  }
+}
