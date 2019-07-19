@@ -6,10 +6,10 @@ import Layout from "../components/Layout"
 const Apps = () => (
   <Layout title="Apps">
     <h1>Applications</h1>
-    <p>I love to make web applications - I've made dozens both big and small. Here are a few : ]</p>
-    <ul>
+    <p>I love to make web applications. I've made dozens of them using all sorts of technologies, here are a few selected apps I've made recently.</p>
+    <ul className="shift-down">
       <li>
-        <a href="https://DiskDraft.com" className="app-card">
+        <a target="_blank" rel="noopener noreferrer" href="https://DiskDraft.com" className="app-card">
           <img className="app-card__logo" src="https://diskdraft.com/assets/logo.png" alt="DiskDraft Logo" />
           <h3 className="app-card__title">DiskDraft</h3>
           <p className="app-card__slogan">Sports League Draft Tool</p>

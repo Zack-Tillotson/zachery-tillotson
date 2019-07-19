@@ -88,13 +88,14 @@
 
   .app-card__logo {
     grid-area: logo;
-    max-width: 4rem;
+    max-width: 5rem;
+    min-width: 5rem;
     align-self: center;
   }
 
   .app-card__title {
     grid-area: title;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
   }
 
@@ -107,10 +108,12 @@
   .app-card__desc {
     grid-area: desc;
     color: var(--color-txt-primary);
+    margin: 0;
   }
 
   .app-card__cta {
     grid-area: cta;
+    margin: 0;
   }
 
   @media(min-width: 1440px) {
@@ -118,5 +121,28 @@
       "logo title desc cta"
       "logo slogan desc cta";
     grid-template-columns: auto 1fr 2fr auto;
+  }
+}
+
+.two-column {
+  display: grid;
+  grid-template-areas:
+    "col1"
+    "col2";
+  grid-template-columns: 1fr;
+  grid-gap: var(--spacing-unit) var(--spacing-unit);
+
+  .two-column__col-one {
+    grid-area: col1;
+  }
+
+  .two-column__col-two {
+    grid-area: col2;
+  }
+
+  @media(min-width: 1440px) {
+    grid-template-areas:
+      "col1 col2";
+    grid-template-columns: 1fr 1fr;
   }
 }
