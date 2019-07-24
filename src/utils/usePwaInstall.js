@@ -17,11 +17,11 @@ function usePwaInstall() {
       updateInstallationState('installed');
     }
 
-    window.addEventListener('beforeinstallprompt ', saveEventHandler);
+    window.addEventListener('beforeinstallprompt', saveEventHandler);
     window.addEventListener('appinstalled', installationFinishedHandler);
 
     return () => {
-      window.removeEventListener('beforeinstallprompt ', saveEventHandler);
+      window.removeEventListener('beforeinstallprompt', saveEventHandler);
       window.removeEventListener('appinstalled', installationFinishedHandler);
     }
   }, []);
