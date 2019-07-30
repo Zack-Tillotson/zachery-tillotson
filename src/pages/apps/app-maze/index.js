@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 import Layout from '../../../components/AppLayout';
 import Maze from '../../../components/Maze';
 import Controls from '../../../components/Maze/Controls';
-import withStore from '../../../store';
 
 const MazeContainer = () => {
   return (
@@ -27,4 +26,4 @@ const MazeContainer = () => {
   );
 }
 
-export default withStore(MazeContainer);
+export default MazeContainer;

@@ -1,2 +1,3 @@
+import withStore from '../state/store';
 import C from './Controls';
-export default C;
+export default withStore(C);

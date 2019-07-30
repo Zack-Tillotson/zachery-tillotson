@@ -1,2 +1,3 @@
+import withStore from './state/store';
 import Component from './PopulationStats'
-export default Component;
+export default withStore(Component);

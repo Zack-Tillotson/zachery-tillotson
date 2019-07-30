@@ -3,7 +3,6 @@ import {Link} from 'gatsby';
 import Helmet from 'react-helmet'
 
 import Layout from '../../../components/AppLayout';
-import withStore from '../../../store';
 import Options from '../../../components/Maze/Options';
 
 
@@ -21,4 +20,4 @@ const MazeOptions = () => (
   </Layout>
 )
 
-export default withStore(MazeOptions);
+export default MazeOptions;

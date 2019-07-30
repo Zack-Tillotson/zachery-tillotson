@@ -3,7 +3,6 @@ import React from "react"
 import AppLayout from '../../../components/AppLayout';
 
 import PopStats from '../../../components/PopulationStats';
-import withStore from '../../../store';
 
 
 const PopStatsContainer = () => (
@@ -12,4 +11,4 @@ const PopStatsContainer = () => (
   </AppLayout>
 )
 
-export default withStore(PopStatsContainer);
+export default PopStatsContainer;
