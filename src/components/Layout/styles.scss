@@ -146,3 +146,16 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.home-background {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  @media(min-width: 1440px) {
+    bottom: auto;
+    top: 0;
+  }
+}

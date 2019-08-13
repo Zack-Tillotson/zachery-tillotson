@@ -12,6 +12,11 @@ const PopulationStatsContainer = () => (
     </Helmet>
     <h1>Population Stats</h1>
 
+    <section className="warning">
+      <h4>Warning: This application is a WIP</h4>
+      <p>"If you finish all the projects you start you wont start all the projects you want to finish" - Zack</p>
+    </section>
+
     <p>This app is a demonstration of unintuitive statistical differences in populations.</p>
 
     <div>

@@ -65,3 +65,22 @@
       "hero dl";
   }
 }
+
+.warning {
+  margin-top: var(--spacing-unit);
+  display: inline-block;
+  padding: var(--spacing-unit);
+  border: solid 2px orange;
+  border-radius: 5px;
+  color: var(--color-txt-light-primary);
+  background: var(--color-bg-light-offset);
+
+  h4 {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
