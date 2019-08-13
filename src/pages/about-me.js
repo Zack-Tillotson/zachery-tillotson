@@ -15,9 +15,9 @@ const AboutMe = () => (
     <section className="shift-down two-column">
       <a className="two-column__col-one" href={headshotImage}>
         <picture>
-          <source srcset={headshotImage415} media="(max-width: 415px)" />
-          <source srcset={headshotImage1440} media="(min-width: 415px) and (max-width: 1440px)" />
-          <source srcset={headshotImage768} media="(min-width: 1440px)" />
+          <source srcSet={headshotImage415} media="(max-width: 415px)" />
+          <source srcSet={headshotImage1440} media="(min-width: 415px) and (max-width: 1440px)" />
+          <source srcSet={headshotImage768} media="(min-width: 1440px)" />
           <img src={headshotImage} alt="This is me!" />
         </picture>
       </a>
