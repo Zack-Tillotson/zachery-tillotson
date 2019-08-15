@@ -13,8 +13,17 @@ const Apps = () => (
           <img className="app-card__logo" src="https://diskdraft.com/assets/logo.png" alt="DiskDraft Logo" />
           <h3 className="app-card__title">DiskDraft</h3>
           <p className="app-card__slogan">Sports League Draft Tool</p>
-          <p className="app-card__desc">DiskDraft is a tool used by Rec. sports leagues to draft players at the start of seasons. It's been "in the wild" for several years and has gotten amazing reviews!</p>
+          <p className="app-card__desc">DiskDraft is a tool used by Rec. sports leagues to draft players at the start of seasons. It's been "in the wild" for several years and I've gotten really positive feedback!</p>
           <p className="app-card__cta">Visit DiskDraft.com</p>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://ElementalInterviewing.com" className="app-card">
+          <img className="app-card__logo" src="https://elementalinterviewing.com/assets/icons/icon-128.png" alt="Elemental Interviewing Logo" />
+          <h3 className="app-card__title">Elemental Interviewing</h3>
+          <p className="app-card__slogan">Interviewing simplified</p>
+          <p className="app-card__desc">Interviewing comes down to the 3 Elemental questions. To get a great job learn what they are and how to answer them.</p>
+          <p className="app-card__cta">Visit Elemental Interviewing</p>
         </a>
       </li>
     	<li>
