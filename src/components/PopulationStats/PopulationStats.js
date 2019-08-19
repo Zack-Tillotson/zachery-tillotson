@@ -26,7 +26,7 @@ const PopulationStatsContainer = ({definitions, stats, definitionChanged, genera
         <ol>
           <li>There is some value for each person. It's not important what that value represents, but for example it could be something like their height, weight, or how far they can throw a ball.</li>
           <li>Each member's value is randomly generated.</li>
-          <li>Generating the values is done by randomly taking a number from a normal distribution using the given mean and standard deviation.</li>
+          <li>Generating the values is done by randomly taking a number from a normal distribution using the given mean and standard deviation for their group.</li>
           <li>Both groups mean is the same (1), but the standard deviation is slightly different.</li>
         </ol>
         <p>The question is: If you were to combine everyone together how would the group differences be reflected at the extremes? I.e. how many of the top 50% would be from Group A? How many of the top 1%?</p>
@@ -47,7 +47,6 @@ const PopulationStatsContainer = ({definitions, stats, definitionChanged, genera
       {!!stats.length && (
         <section>
           <h2>Combined Population Stats</h2>
-          <p>Are you surprised?</p>
           <table>
             <thead>
               <tr>
@@ -67,6 +66,7 @@ const PopulationStatsContainer = ({definitions, stats, definitionChanged, genera
               ))}
             </tbody>
           </table>
+          <p>The group with the slighly standard deviation is way overrepresented at the extreme! Are you surprised?</p>
         </section>
       )}
     </section>
