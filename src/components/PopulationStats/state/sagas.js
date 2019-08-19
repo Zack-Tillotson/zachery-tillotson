@@ -4,17 +4,17 @@ import {put} from 'redux-saga/effects';
 import actions from './actions';
 // import selector from './selector';
 
-function createGroup(id) {
+function createGroup(id, index) {
   return {
     id,
     name: `Group ${id}`,
-    mean: parseInt(100 * Math.random() / 2 + 25) / 100,
-    stdDev: .1,
+    mean: 1,
+    stdDev: .03 + .01 * index,
   };
 }
 
 function* initialize() {
-  const groups = new Array(2).fill().map((_, index) => createGroup(index + 1));
+  const groups = new Array(2).fill().map((_, index) => createGroup(index + 1, index));
   yield put(actions.initialize(groups));
 }
 
