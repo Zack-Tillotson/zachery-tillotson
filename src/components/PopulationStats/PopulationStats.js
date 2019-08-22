@@ -66,7 +66,7 @@ const PopulationStatsContainer = ({definitions, stats, definitionChanged, genera
               ))}
             </tbody>
           </table>
-          <p>The group with the slighly standard deviation is way overrepresented at the extreme! Are you surprised?</p>
+          <p>There is a big difference at the extreme! While the top 50% is basically evenly represented, the group with the slightly larger standard deviation is way overrepresented in the top 1%!</p>
         </section>
       )}
     </section>

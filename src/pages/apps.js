@@ -35,6 +35,15 @@ const Apps = () => (
           <p className="app-card__cta">See Maze Maker</p>
         </Link>
       </li>
+      <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://TanyaTillotson.com" className="app-card">
+          <img className="app-card__logo" src="https://tanyatillotson.com/assets/tt.png" alt="Tanya Tillotson Logo" />
+          <h3 className="app-card__title">Tanya Tillotson</h3>
+          <p className="app-card__slogan">Professional portfolio</p>
+          <p className="app-card__desc">The professional portfolio for architect Tanya Tillotson.</p>
+          <p className="app-card__cta">Visit TanyaTillotson.com</p>
+        </a>
+      </li>
     	<li>
         <Link to="/apps/population-stats/" className="app-card">
           <img className="app-card__logo" src="/apps/population-stats/ps-icon-192.png" alt="Population Stats logo" />
