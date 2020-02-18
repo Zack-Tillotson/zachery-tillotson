@@ -12,7 +12,7 @@ function useDisplayModeClient(mode) {
 
     const isMediaMatch = window.matchMedia('(display-mode: standalone)').matches;
     saveIsDisplayModeMatch(isMediaMatch);
-  }, []);
+  }, [mode]);
 
   return [isDisplayModeMatch];
 }

@@ -9,8 +9,17 @@ const Apps = () => (
     <p>I love to make web applications. I've made dozens of them using all sorts of technologies, here are a few selected apps I've made recently.</p>
     <ul className="shift-down">
       <li>
-        <a target="_blank" rel="noopener noreferrer" href="https://ElementalInterviewing.com" className="app-card">
-          <img className="app-card__logo" src="https://elementalinterviewing.com/assets/icons/icon-128.png" alt="Elemental Interviewing Logo" />
+        <a target="_blank" rel="noopener noreferrer" href="https://swplayground.com/" className="app-card">
+          <img className="app-card__logo" src="https://images.ctfassets.net/c2zc4p6tmkah/1pUpUF6aNNx8JBH7qG2ptO/7a14d1db41a191a22b2246891d3a4fac/exploded-browser.png?fm=webp&w=700" alt="Elemental Interviewing Logo" />
+          <h3 className="app-card__title">SW Playground</h3>
+          <p className="app-card__slogan">Learn Service Workers</p>
+          <p className="app-card__desc">Have you heard the hype around Service Workers but are confused by how they work? Service Workers are the most powerful new tool available in web browsers today, but are also a totally new paradigm. Get started using Service Workers today.</p>
+          <p className="app-card__cta">Visit SW Playground</p>
+        </a>
+      </li>
+      <li>
+        <a target="_blank" rel="noopener noreferrer" href="https://elemental-interviewing.web.app/" className="app-card">
+          <img className="app-card__logo" src="https://elemental-interviewing.web.app/assets/icons/icon-128.png" alt="Elemental Interviewing Logo" />
           <h3 className="app-card__title">Elemental Interviewing</h3>
           <p className="app-card__slogan">Interviewing simplified</p>
           <p className="app-card__desc">Interviewing comes down to the 3 Elemental questions. To get a great job learn what they are and how to answer them.</p>
@@ -43,15 +52,6 @@ const Apps = () => (
           <p className="app-card__desc">The professional portfolio for architect Tanya Tillotson.</p>
           <p className="app-card__cta">Visit TanyaTillotson.com</p>
         </a>
-      </li>
-    	<li>
-        <Link to="/apps/population-stats/" className="app-card">
-          <img className="app-card__logo" src="/apps/population-stats/ps-icon-192.png" alt="Population Stats logo" />
-          <h3 className="app-card__title">Population Stats</h3>
-          <p className="app-card__slogan">Exploring intution</p>
-          <p className="app-card__desc">"If men are only a few inches taller than women on average, how many of the tallest people are women?"</p>
-          <p className="app-card__cta">See Population Stats</p>
-        </Link>
       </li>
     </ul>
     <Link to="/" className="shift-down">Go back to the homepage</Link>

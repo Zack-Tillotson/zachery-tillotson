@@ -46,15 +46,11 @@ export default function(state = initialState, action) {
       const together = groups.reduce((soFar, group) => soFar.concat(group), []).sort();
 
       const percThreshold1 = together[parseInt(together.length * .99)];
-      const percThreshold10 = together[parseInt(together.length * .9)];
       const percThreshold50 = together[parseInt(together.length * .5)];
       const stats = [{
         name: 'Top 50%',
         groups: groups.map(group => group.reduce((soFar, item) => item > percThreshold50 ? soFar + 1 : soFar, 0)),
       }, {
-      //   name: 'Top 10%',
-      //   groups: groups.map(group => group.reduce((soFar, item) => item > percThreshold10 ? soFar + 1 : soFar, 0)),
-      // }, {
         name: 'Top 1%',
         groups: groups.map(group => group.reduce((soFar, item) => item > percThreshold1 ? soFar + 1 : soFar, 0)),
       },
